@@ -16,13 +16,7 @@
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-181075487-1"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-181075487-1');
-</script>
+<![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
     <div class="container template-article">
@@ -56,7 +50,7 @@
   <a href="../reference/index.html">Functions</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Other Packages
      
     <span class="caret"></span>
@@ -100,13 +94,13 @@
 
       
 
-      </header><script src="building-tests_files/header-attrs-2.11/header-attrs.js"></script><script src="building-tests_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><script src="building-tests_files/header-attrs-2.14/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Building tests for your functions</h1>
                         <h4 class="author">Nick Howlett, Sandro Gsteiger</h4>
             
-            <h4 class="date">2021-10-22</h4>
+            <h4 class="date">2022-06-08</h4>
       
       
       <div class="hidden name"><code>building-tests.Rmd</code></div>
@@ -135,7 +129,7 @@
   <span class="fu">expect_equal</span><span class="op">(</span><span class="va">output</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">6</span>, <span class="fl">9</span>, <span class="fl">12</span>, <span class="fl">15</span>, <span class="fl">18</span>, <span class="fl">21</span>, <span class="fl">24</span>, <span class="fl">27.0001144483108</span><span class="op">)</span><span class="op">)</span>
 <span class="op">}</span><span class="op">)</span></pre></div>
 <p>The call to <code>context()</code>lets us preface the following test with a statement of the functional requirement. This is helpful when the automated testing happens as this title will help direct us to any failing test in the console output. It’s also good practice to explicitly state the functional requirement so any other developers reading these tests are clear on what you intended the function to do (and not do). After <code>context()</code> there is a <code>test_that("", {})</code> chunk where we lay out our expectations of the function. Schematically we generate a fixed output for a fixed input passed through the function we are testing, and we then check our expectations on that output such that they satisfy our requirement laid out above in <code>context()</code>.</p>
-<p>Tests can be run interactively using the <code><a href="https://devtools.r-lib.org//reference/test.html">devtools::test()</a></code> function.</p>
+<p>Tests can be run interactively using the <code><a href="https://devtools.r-lib.org/reference/test.html">devtools::test()</a></code> function.</p>
 </div>
   </div>
 

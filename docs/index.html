@@ -16,13 +16,7 @@
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-181075487-1"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-181075487-1');
-</script>
+<![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
     <div class="container template-home">
@@ -56,7 +50,7 @@
   <a href="reference/index.html">Functions</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Other Packages
      
     <span class="caret"></span>
@@ -117,7 +111,7 @@
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>First ensure you have installed from CRAN <a href="https://cran.r-project.org/web/packages/gemtc/">gemtc package</a> and <a href="https://cran.r-project.org/web/packages/rjags/">rjags package</a> and that you also have <a href="http://mcmc-jags.sourceforge.net/">JAGS</a> installed.</p>
 <p>gemtcPlus can the be installed directly from this repo via</p>
-<pre><code><a href="https://devtools.r-lib.org//reference/remote-reexports.html">devtools::install_github(
+<pre><code><a href="https://devtools.r-lib.org/reference/remote-reexports.html">devtools::install_github(
   "roche/gemtcPlus"
   )</a></code></pre>
 <p>After successful installation, the package can be loaded normally (<code>library(gemtcPlus)</code>).</p>
