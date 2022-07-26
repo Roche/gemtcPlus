@@ -1,5 +1,5 @@
 pandoc: 2.11.4
-pkgdown: 1.6.1
+pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   building-reports: building-reports.html
@@ -11,5 +11,5 @@ articles:
   example-nma-groupedTTE-PWE: example-nma-groupedTTE-PWE.html
   example-nma-hr-data: example-nma-hr-data.html
   general-development-workflow: general-development-workflow.html
-last_built: 2022-06-08T15:17Z
+last_built: 2022-07-26T09:57Z
 
