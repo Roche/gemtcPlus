@@ -26,6 +26,3 @@ Calculate the study and arm level survivor functions estimates from a fractional
 \details{
 The FP parameters to calculate the log-hazard curves for each survivor function are combinations \code{bl.node + contrast.node}. Here, every study-specific baseline estimate is combined with the arm-specific contrast to obtain arm level NMA estimates.
 }
-\examples{
-
-}

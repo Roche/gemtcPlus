@@ -2,6 +2,7 @@
 % Please edit documentation in R/gemtcPlus.R
 \docType{package}
 \name{gemtcPlus}
+\alias{gemtcPlus-package}
 \alias{gemtcPlus}
 \title{gemtcPlus: A package for performing NMA in R}
 \description{

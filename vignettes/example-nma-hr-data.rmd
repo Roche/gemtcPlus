@@ -43,9 +43,8 @@ model_plan <- plan_hr(bth.model = "FE",
 ```
 
 ## Ready the data
-```{r, echo=FALSE}
+```{r}
 model_input <-  nma_pre_proc(data = hr_data, plan = model_plan)
-
 ```
 
 ## Fit the model 

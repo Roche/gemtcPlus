@@ -16,12 +16,9 @@
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-SGZFXJEC6X"></script><script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
-gtag('config', 'G-SGZFXJEC6X'); </script>
+<![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
-    
-
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -34,7 +31,7 @@ gtag('config', 'G-SGZFXJEC6X'); </script>
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gemtcPlus</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -60,29 +57,29 @@ gtag('config', 'G-SGZFXJEC6X'); </script>
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="https://roche.github.io/Global-HTA-Evidence-Open/index.html" class="external-link">Global-HTA-Evidence-Open</a>
+      <a href="https://roche.github.io/Global-HTA-Evidence-Open/index.html">Global-HTA-Evidence-Open</a>
     </li>
     <li>
-      <a href="https://roche.github.io/flexsurvPlus/index.html" class="external-link">flexsurvPlus</a>
+      <a href="https://roche.github.io/flexsurvPlus/index.html">flexsurvPlus</a>
     </li>
     <li>
-      <a href="https://roche.github.io/gemtcPlus/index.html" class="external-link">gemtcPlus</a>
+      <a href="https://roche.github.io/gemtcPlus/index.html">gemtcPlus</a>
     </li>
     <li>
-      <a href="https://roche.github.io/MAIC/index.html" class="external-link">MAIC</a>
+      <a href="https://roche.github.io/MAIC/index.html">MAIC</a>
     </li>
     <li>
-      <a href="https://roche.github.io/rpsftmPlus/index.html" class="external-link">rpsftmPlus</a>
+      <a href="https://roche.github.io/rpsftmPlus/index.html">rpsftmPlus</a>
     </li>
     <li>
-      <a href="https://roche.github.io/descem/index.html" class="external-link">descem</a>
+      <a href="https://roche.github.io/descem/index.html">descem</a>
     </li>
   </ul>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/Roche/gemtcPlus" class="external-link">
+  <a href="https://github.com/Roche/gemtcPlus">
     <span class="fa fa-github"></span>
      
   </a>
@@ -97,13 +94,15 @@ gtag('config', 'G-SGZFXJEC6X'); </script>
 
       
 
-      </header><div class="row">
+      </header><script src="example-nma-hr-data_files/header-attrs-2.20/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Bayesian FE &amp; RE NMA for HR data (via gemtc package) - Result Generation</h1>
-                        <h4 data-toc-skip class="author">Sandro Gsteiger, Nick Howlett</h4>
+      <h1 data-toc-skip>Bayesian FE &amp; RE NMA for HR data (via gemtc
+package) - Result Generation</h1>
+                        <h4 class="author">Sandro Gsteiger, Nick
+Howlett</h4>
             
-            <h4 data-toc-skip class="date">2022-07-26</h4>
+            <h4 class="date">2025-04-24</h4>
       
       
       <div class="hidden name"><code>example-nma-hr-data.rmd</code></div>
@@ -112,32 +111,34 @@ gtag('config', 'G-SGZFXJEC6X'); </script>
 
     
     
-<div class="section level3">
-<h3 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-</h3>
-<p>This vignette provides a short example of a Bayesian NMA for HR data. The model fit relies on the <code>gemtc</code> package, pre- and post-processing is done with <code>gemtcPlus</code>.</p>
+<div id="introduction" class="section level2">
+<h2 class="hasAnchor">
+<a href="#introduction" class="anchor"></a>Introduction</h2>
+<p>This vignette provides a short example of a Bayesian NMA for HR data.
+The model fit relies on the <code>gemtc</code> package, pre- and
+post-processing is done with <code>gemtcPlus</code>.</p>
 </div>
-<div class="section level3">
-<h3 id="prepare-the-environment">Prepare the environment<a class="anchor" aria-label="anchor" href="#prepare-the-environment"></a>
-</h3>
+<div id="prepare-the-environment" class="section level2">
+<h2 class="hasAnchor">
+<a href="#prepare-the-environment" class="anchor"></a>Prepare the environment</h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html" class="external-link">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>echo <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>echo <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/gertvv/gemtc" class="external-link">gemtc</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">gemtcPlus</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://xavier-fim.net/packages/ggmcmc/" class="external-link">ggmcmc</a></span><span class="op">)</span></span></code></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/gertvv/gemtc">gemtc</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">gemtcPlus</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://xavier-fim.net/packages/ggmcmc/">ggmcmc</a></span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="load-in-the-data">Load in the data<a class="anchor" aria-label="anchor" href="#load-in-the-data"></a>
-</h3>
+<div id="load-in-the-data" class="section level2">
+<h2 class="hasAnchor">
+<a href="#load-in-the-data" class="anchor"></a>Load in the data</h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># load example data</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"hr_data"</span>, package <span class="op">=</span> <span class="st">"gemtcPlus"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"hr_data"</span>, package <span class="op">=</span> <span class="st">"gemtcPlus"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="plan-the-model">Plan the model<a class="anchor" aria-label="anchor" href="#plan-the-model"></a>
-</h3>
+<div id="plan-the-model" class="section level2">
+<h2 class="hasAnchor">
+<a href="#plan-the-model" class="anchor"></a>Plan the model</h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#Plan model</span></span>
 <span><span class="va">model_plan</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/plan_hr.html">plan_hr</a></span><span class="op">(</span>bth.model <span class="op">=</span> <span class="st">"FE"</span>, </span>
@@ -148,84 +149,86 @@ gtag('config', 'G-SGZFXJEC6X'); </script>
 <span>                          link <span class="op">=</span> <span class="st">"identity"</span>,</span>
 <span>                          linearModel <span class="op">=</span> <span class="st">"fixed"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="ready-the-data">Ready the data<a class="anchor" aria-label="anchor" href="#ready-the-data"></a>
-</h3>
-</div>
-<div class="section level3">
-<h3 id="fit-the-model">Fit the model<a class="anchor" aria-label="anchor" href="#fit-the-model"></a>
-</h3>
+<div id="ready-the-data" class="section level2">
+<h2 class="hasAnchor">
+<a href="#ready-the-data" class="anchor"></a>Ready the data</h2>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">model_input</span> <span class="op">&lt;-</span>  <span class="fu"><a href="../reference/nma_pre_proc.html">nma_pre_proc</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">hr_data</span>, plan <span class="op">=</span> <span class="va">model_plan</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="fit-the-model" class="section level2">
+<h2 class="hasAnchor">
+<a href="#fit-the-model" class="anchor"></a>Fit the model</h2>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">model</span>  <span class="op">&lt;-</span> <span class="fu"><a href="../reference/nma_fit.html">nma_fit</a></span><span class="op">(</span>model_input <span class="op">=</span> <span class="va">model_input</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Warning in (function (network, type = "consistency", factor = 2.5, n.chain =</span></span>
-<span><span class="co">## 4, : Likelihood can not be inferred. Defaulting to normal.</span></span></code></pre>
-<pre><code><span><span class="co">## Compiling model graph</span></span>
-<span><span class="co">##    Resolving undeclared variables</span></span>
-<span><span class="co">##    Allocating nodes</span></span>
-<span><span class="co">## Graph information:</span></span>
-<span><span class="co">##    Observed stochastic nodes: 7</span></span>
-<span><span class="co">##    Unobserved stochastic nodes: 5</span></span>
-<span><span class="co">##    Total graph size: 190</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## Initializing model</span></span></code></pre>
+<pre><code>## Warning in (function (network, type = "consistency", factor = 2.5, n.chain =
+## 4, : Likelihood can not be inferred. Defaulting to normal.</code></pre>
+<pre><code>## Compiling model graph
+##    Resolving undeclared variables
+##    Allocating nodes
+## Graph information:
+##    Observed stochastic nodes: 7
+##    Unobserved stochastic nodes: 5
+##    Total graph size: 132
+## 
+## Initializing model</code></pre>
 </div>
-<div class="section level3">
-<h3 id="post-processing">Post processing<a class="anchor" aria-label="anchor" href="#post-processing"></a>
-</h3>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs_traceplot.html" class="external-link">ggs_traceplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs.html" class="external-link">ggs</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">samples</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="example-nma-hr-data_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
+<div id="post-processing" class="section level2">
+<h2 class="hasAnchor">
+<a href="#post-processing" class="anchor"></a>Post processing</h2>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs_density.html" class="external-link">ggs_density</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs.html" class="external-link">ggs</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">samples</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="example-nma-hr-data_files/figure-html/unnamed-chunk-5-2.png" width="700"></p>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs_traceplot.html">ggs_traceplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs.html">ggs</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">samples</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p><img src="example-nma-hr-data_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## </span></span>
-<span><span class="co">## Results on the Mean Difference scale</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## Iterations = 1:6000</span></span>
-<span><span class="co">## Thinning interval = 1 </span></span>
-<span><span class="co">## Number of chains = 3 </span></span>
-<span><span class="co">## Sample size per chain = 6000 </span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## 1. Empirical mean and standard deviation for each variable,</span></span>
-<span><span class="co">##    plus standard error of the mean:</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">##           Mean      SD  Naive SE Time-series SE</span></span>
-<span><span class="co">## d.B.A -0.12756 0.05476 0.0004081      0.0004082</span></span>
-<span><span class="co">## d.C.B  0.19668 0.08406 0.0006265      0.0006266</span></span>
-<span><span class="co">## d.C.D  0.03582 0.12055 0.0008985      0.0009497</span></span>
-<span><span class="co">## d.C.E -0.09242 0.06568 0.0004895      0.0005096</span></span>
-<span><span class="co">## d.D.F  0.20726 0.19740 0.0014713      0.0014406</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## 2. Quantiles for each variable:</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">##           2.5%      25%      50%      75%    97.5%</span></span>
-<span><span class="co">## d.B.A -0.23423 -0.16416 -0.12744 -0.09073 -0.01945</span></span>
-<span><span class="co">## d.C.B  0.03277  0.13963  0.19664  0.25326  0.36148</span></span>
-<span><span class="co">## d.C.D -0.20174 -0.04556  0.03726  0.11698  0.26933</span></span>
-<span><span class="co">## d.C.E -0.22075 -0.13705 -0.09200 -0.04789  0.03555</span></span>
-<span><span class="co">## d.D.F -0.17819  0.07160  0.20733  0.34140  0.59814</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## -- Model fit (residual deviance):</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">##      Dbar        pD       DIC </span></span>
-<span><span class="co">##  5.482157  4.980892 10.463049 </span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## 7 data points, ratio 0.7832, I^2 = 0%</span></span></code></pre>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">model_input</span><span class="op">$</span><span class="va">fitting_data</span><span class="op">)</span></span></code></pre></div>
-<p><img src="example-nma-hr-data_files/figure-html/unnamed-chunk-5-3.png" width="700"></p>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs_density.html">ggs_density</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs.html">ggs</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">samples</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p><img src="example-nma-hr-data_files/figure-html/unnamed-chunk-5-2.png" width="700"></p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+## Results on the Mean Difference scale
+## 
+## Iterations = 1:6000
+## Thinning interval = 1 
+## Number of chains = 3 
+## Sample size per chain = 6000 
+## 
+## 1. Empirical mean and standard deviation for each variable,
+##    plus standard error of the mean:
+## 
+##           Mean      SD  Naive SE Time-series SE
+## d.B.A -0.12792 0.05541 0.0004130      0.0004044
+## d.C.B  0.19765 0.08313 0.0006196      0.0006196
+## d.C.D  0.03549 0.12051 0.0008983      0.0009557
+## d.C.E -0.09321 0.06649 0.0004956      0.0005243
+## d.D.F  0.20852 0.19508 0.0014540      0.0014541
+## 
+## 2. Quantiles for each variable:
+## 
+##           2.5%      25%      50%      75%    97.5%
+## d.B.A -0.23611 -0.16600 -0.12790 -0.09026 -0.01820
+## d.C.B  0.03457  0.14126  0.19849  0.25451  0.35855
+## d.C.D -0.20200 -0.04492  0.03748  0.11554  0.26981
+## d.C.E -0.22370 -0.13805 -0.09306 -0.04824  0.03684
+## d.D.F -0.17147  0.07815  0.20894  0.33972  0.59366
+## 
+## -- Model fit (residual deviance):
+## 
+##      Dbar        pD       DIC 
+##  5.479850  4.978586 10.458436 
+## 
+## 7 data points, ratio 0.7828, I^2 = 0%</code></pre>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">model_input</span><span class="op">$</span><span class="va">fitting_data</span><span class="op">)</span></span></code></pre></div>
+<p><img src="example-nma-hr-data_files/figure-html/unnamed-chunk-5-3.png" width="700"></p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_mtc_sum.html">get_mtc_sum</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##     DIC   pD resDev dataPoints</span></span>
-<span><span class="co">## 1 10.46 4.98   5.48          7</span></span></code></pre>
+<pre><code>##     DIC   pD resDev dataPoints
+## 1 10.46 4.98   5.48          7</code></pre>
 </div>
-<div class="section level2">
-<h2 id="random-effects-example">Random Effects example<a class="anchor" aria-label="anchor" href="#random-effects-example"></a>
-</h2>
+<div id="random-effects-example" class="section level1">
+<h1 class="hasAnchor">
+<a href="#random-effects-example" class="anchor"></a>Random Effects example</h1>
 <p>Update model plan and re-run fit.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#Plan model</span></span>
 <span><span class="va">model_plan</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/plan_hr.html">plan_hr</a></span><span class="op">(</span>bth.model <span class="op">=</span> <span class="st">"RE"</span>, </span>
 <span>                      n.chain <span class="op">=</span> <span class="fl">3</span>,</span>
@@ -234,137 +237,149 @@ gtag('config', 'G-SGZFXJEC6X'); </script>
 <span>                      n.adapt <span class="op">=</span> <span class="fl">1000</span>,</span>
 <span>                      link <span class="op">=</span> <span class="st">"identity"</span>,</span>
 <span>                      linearModel <span class="op">=</span> <span class="st">"random"</span>, </span>
-<span>                      bth.prior <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/gemtc/man/mtc.hy.prior.html" class="external-link">mtc.hy.prior</a></span><span class="op">(</span>type <span class="op">=</span> <span class="st">"var"</span>, distr <span class="op">=</span> <span class="st">"dlnorm"</span>,<span class="op">-</span><span class="fl">4.18</span>, <span class="fl">1</span> <span class="op">/</span> <span class="fl">1.41</span> <span class="op">^</span> <span class="fl">2</span><span class="op">)</span></span>
+<span>                      bth.prior <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/gemtc/man/mtc.hy.prior.html">mtc.hy.prior</a></span><span class="op">(</span>type <span class="op">=</span> <span class="st">"var"</span>, distr <span class="op">=</span> <span class="st">"dlnorm"</span>,<span class="op">-</span><span class="fl">4.18</span>, <span class="fl">1</span> <span class="op">/</span> <span class="fl">1.41</span> <span class="op">^</span> <span class="fl">2</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<div class="section level3">
-<h3 id="fit-the-model-1">Fit the model<a class="anchor" aria-label="anchor" href="#fit-the-model-1"></a>
-</h3>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div id="fit-the-model-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#fit-the-model-1" class="anchor"></a>Fit the model</h2>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">model</span>  <span class="op">&lt;-</span> <span class="fu"><a href="../reference/nma_fit.html">nma_fit</a></span><span class="op">(</span>model_input <span class="op">=</span> <span class="va">model_input</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Warning in (function (network, type = "consistency", factor = 2.5, n.chain =</span></span>
-<span><span class="co">## 4, : Likelihood can not be inferred. Defaulting to normal.</span></span></code></pre>
-<pre><code><span><span class="co">## Compiling model graph</span></span>
-<span><span class="co">##    Resolving undeclared variables</span></span>
-<span><span class="co">##    Allocating nodes</span></span>
-<span><span class="co">## Graph information:</span></span>
-<span><span class="co">##    Observed stochastic nodes: 7</span></span>
-<span><span class="co">##    Unobserved stochastic nodes: 5</span></span>
-<span><span class="co">##    Total graph size: 190</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## Initializing model</span></span></code></pre>
+<pre><code>## Warning in (function (network, type = "consistency", factor = 2.5, n.chain =
+## 4, : Likelihood can not be inferred. Defaulting to normal.</code></pre>
+<pre><code>## Compiling model graph
+##    Resolving undeclared variables
+##    Allocating nodes
+## Graph information:
+##    Observed stochastic nodes: 7
+##    Unobserved stochastic nodes: 5
+##    Total graph size: 132
+## 
+## Initializing model</code></pre>
 </div>
 </div>
-<div class="section level2">
-<h2 id="post-processing-1">Post processing<a class="anchor" aria-label="anchor" href="#post-processing-1"></a>
-</h2>
-<div class="section level3">
-<h3 id="inspect-convergence">Inspect convergence<a class="anchor" aria-label="anchor" href="#inspect-convergence"></a>
-</h3>
-<p>The <code>ggmcmc</code> package provides ggplot2 versions of all major convergence plots and diagnostics.</p>
+<div id="post-processing-1" class="section level1">
+<h1 class="hasAnchor">
+<a href="#post-processing-1" class="anchor"></a>Post processing</h1>
+<div id="inspect-convergence" class="section level2">
+<h2 class="hasAnchor">
+<a href="#inspect-convergence" class="anchor"></a>Inspect convergence</h2>
+<p>The <code>ggmcmc</code> package provides ggplot2 versions of all
+major convergence plots and diagnostics.</p>
 <p><strong>Figure</strong> Traceplot</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs_traceplot.html" class="external-link">ggs_traceplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs.html" class="external-link">ggs</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">samples</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs_traceplot.html">ggs_traceplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs.html">ggs</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">samples</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="example-nma-hr-data_files/figure-html/unnamed-chunk-8-1.png" width="576"></p>
 <p><strong>Figure</strong> Densityplot</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs_density.html" class="external-link">ggs_density</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs.html" class="external-link">ggs</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">samples</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="example-nma-hr-data_files/figure-html/unnamed-chunk-9-1.png" width="576"></p>
-<p><strong>Figure</strong> Brooks-Gelman-Rubin convergence diagnostic (Rhat)</p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs_Rhat.html" class="external-link">ggs_Rhat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs.html" class="external-link">ggs</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">samples</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs_density.html">ggs_density</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs.html">ggs</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">samples</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p><img src="example-nma-hr-data_files/figure-html/unnamed-chunk-9-1.png" width="576"></p>
+<p><strong>Figure</strong> Brooks-Gelman-Rubin convergence diagnostic
+(Rhat)</p>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs_Rhat.html">ggs_Rhat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs.html">ggs</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">samples</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="example-nma-hr-data_files/figure-html/unnamed-chunk-10-1.png" width="576"></p>
 <p><strong>Figure</strong> Auto-correlation plot</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs_autocorrelation.html" class="external-link">ggs_autocorrelation</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs.html" class="external-link">ggs</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">samples</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs_autocorrelation.html">ggs_autocorrelation</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs.html">ggs</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">samples</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="example-nma-hr-data_files/figure-html/unnamed-chunk-11-1.png" width="576"></p>
 <p><strong>Figure</strong> Running means</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs_running.html" class="external-link">ggs_running</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs.html" class="external-link">ggs</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">samples</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs_running.html">ggs_running</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/ggmcmc/man/ggs.html">ggs</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">samples</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="example-nma-hr-data_files/figure-html/unnamed-chunk-12-1.png" width="576"></p>
 </div>
 </div>
-<div class="section level2">
-<h2 id="produce-outputs-of-interest">Produce outputs of interest<a class="anchor" aria-label="anchor" href="#produce-outputs-of-interest"></a>
-</h2>
-<div class="section level3">
-<h3 id="posterior-summaries-log-scale">Posterior summaries (log-scale)<a class="anchor" aria-label="anchor" href="#posterior-summaries-log-scale"></a>
-</h3>
-<p>The contrasts in this model are log-hazard ratios (which correspond to differences in log-hazard rates).</p>
-<p>Unfortunately, <code>gemtc</code> does not provide an estimate of the effective sample size (<code>n.eff</code>). Instead, a time-series SE is given. As a rule of thumb, the length of the MCMC is sufficient if the time-series SE is smaller than 2%(-5%) of the posterior SD.</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## </span></span>
-<span><span class="co">## Results on the Mean Difference scale</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## Iterations = 1:6000</span></span>
-<span><span class="co">## Thinning interval = 1 </span></span>
-<span><span class="co">## Number of chains = 3 </span></span>
-<span><span class="co">## Sample size per chain = 6000 </span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## 1. Empirical mean and standard deviation for each variable,</span></span>
-<span><span class="co">##    plus standard error of the mean:</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">##           Mean      SD  Naive SE Time-series SE</span></span>
-<span><span class="co">## d.B.A -0.12756 0.05476 0.0004081      0.0004082</span></span>
-<span><span class="co">## d.C.B  0.19668 0.08406 0.0006265      0.0006266</span></span>
-<span><span class="co">## d.C.D  0.03582 0.12055 0.0008985      0.0009497</span></span>
-<span><span class="co">## d.C.E -0.09242 0.06568 0.0004895      0.0005096</span></span>
-<span><span class="co">## d.D.F  0.20726 0.19740 0.0014713      0.0014406</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## 2. Quantiles for each variable:</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">##           2.5%      25%      50%      75%    97.5%</span></span>
-<span><span class="co">## d.B.A -0.23423 -0.16416 -0.12744 -0.09073 -0.01945</span></span>
-<span><span class="co">## d.C.B  0.03277  0.13963  0.19664  0.25326  0.36148</span></span>
-<span><span class="co">## d.C.D -0.20174 -0.04556  0.03726  0.11698  0.26933</span></span>
-<span><span class="co">## d.C.E -0.22075 -0.13705 -0.09200 -0.04789  0.03555</span></span>
-<span><span class="co">## d.D.F -0.17819  0.07160  0.20733  0.34140  0.59814</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## -- Model fit (residual deviance):</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">##      Dbar        pD       DIC </span></span>
-<span><span class="co">##  5.482157  4.980892 10.463049 </span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## 7 data points, ratio 0.7832, I^2 = 0%</span></span></code></pre>
-<p>In the example here, the chain length seems borderline (sufficient for posterior means and medians, but rather a bit too small for stable 95% credible intervals).</p>
-<p>To judge overall model fit, the residual deviance should be compared to the number of independent data points (which can be done via a small utility function in <code>gemtcPlus</code>).</p>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div id="produce-outputs-of-interest" class="section level1">
+<h1 class="hasAnchor">
+<a href="#produce-outputs-of-interest" class="anchor"></a>Produce outputs of interest</h1>
+<div id="posterior-summaries-log-scale" class="section level2">
+<h2 class="hasAnchor">
+<a href="#posterior-summaries-log-scale" class="anchor"></a>Posterior summaries (log-scale)</h2>
+<p>The contrasts in this model are log-hazard ratios (which correspond
+to differences in log-hazard rates).</p>
+<p>Unfortunately, <code>gemtc</code> does not provide an estimate of the
+effective sample size (<code>n.eff</code>). Instead, a time-series SE is
+given. As a rule of thumb, the length of the MCMC is sufficient if the
+time-series SE is smaller than 2%(-5%) of the posterior SD.</p>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+## Results on the Mean Difference scale
+## 
+## Iterations = 1:6000
+## Thinning interval = 1 
+## Number of chains = 3 
+## Sample size per chain = 6000 
+## 
+## 1. Empirical mean and standard deviation for each variable,
+##    plus standard error of the mean:
+## 
+##           Mean      SD  Naive SE Time-series SE
+## d.B.A -0.12792 0.05541 0.0004130      0.0004044
+## d.C.B  0.19765 0.08313 0.0006196      0.0006196
+## d.C.D  0.03549 0.12051 0.0008983      0.0009557
+## d.C.E -0.09321 0.06649 0.0004956      0.0005243
+## d.D.F  0.20852 0.19508 0.0014540      0.0014541
+## 
+## 2. Quantiles for each variable:
+## 
+##           2.5%      25%      50%      75%    97.5%
+## d.B.A -0.23611 -0.16600 -0.12790 -0.09026 -0.01820
+## d.C.B  0.03457  0.14126  0.19849  0.25451  0.35855
+## d.C.D -0.20200 -0.04492  0.03748  0.11554  0.26981
+## d.C.E -0.22370 -0.13805 -0.09306 -0.04824  0.03684
+## d.D.F -0.17147  0.07815  0.20894  0.33972  0.59366
+## 
+## -- Model fit (residual deviance):
+## 
+##      Dbar        pD       DIC 
+##  5.479850  4.978586 10.458436 
+## 
+## 7 data points, ratio 0.7828, I^2 = 0%</code></pre>
+<p>In the example here, the chain length seems borderline (sufficient
+for posterior means and medians, but rather a bit too small for stable
+95% credible intervals).</p>
+<p>To judge overall model fit, the residual deviance should be compared
+to the number of independent data points (which can be done via a small
+utility function in <code>gemtcPlus</code>).</p>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_mtc_sum.html">get_mtc_sum</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##     DIC   pD resDev dataPoints</span></span>
-<span><span class="co">## 1 10.46 4.98   5.48          7</span></span></code></pre>
+<pre><code>##     DIC   pD resDev dataPoints
+## 1 10.46 4.98   5.48          7</code></pre>
 </div>
-<div class="section level3">
-<h3 id="hazard-ratio-estimates">Hazard ratio estimates<a class="anchor" aria-label="anchor" href="#hazard-ratio-estimates"></a>
-</h3>
-<p>Assume new treatment is “A” and is to be compared vs all other treatments.</p>
+<div id="hazard-ratio-estimates" class="section level2">
+<h2 class="hasAnchor">
+<a href="#hazard-ratio-estimates" class="anchor"></a>Hazard ratio estimates</h2>
+<p>Assume new treatment is “A” and is to be compared vs all other
+treatments.</p>
 <p><strong>Table</strong> Hazard ratios A vs other treatments</p>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">HR</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_mtc_newVsAll.html">get_mtc_newVsAll</a></span><span class="op">(</span><span class="va">model</span>, new.lab <span class="op">=</span> <span class="st">"A"</span>, transform <span class="op">=</span> <span class="st">"exp"</span>, digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
 <span><span class="va">HR</span></span></code></pre></div>
-<pre><code><span><span class="co">##   Comparator  Med CIlo CIup</span></span>
-<span><span class="co">## 1          B 0.88 0.79 0.98</span></span>
-<span><span class="co">## 2          C 1.07 0.88 1.30</span></span>
-<span><span class="co">## 3          D 1.03 0.76 1.41</span></span>
-<span><span class="co">## 4          E 1.17 0.93 1.49</span></span>
-<span><span class="co">## 5          F 0.84 0.52 1.38</span></span></code></pre>
-<p><strong>Table</strong> Probability A better than other treatments (better meaning smaller HR)</p>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<pre><code>##   Comparator  Med CIlo CIup
+## 1          B 0.88 0.79 0.98
+## 2          C 1.07 0.88 1.30
+## 3          D 1.03 0.76 1.41
+## 4          E 1.18 0.93 1.49
+## 5          F 0.84 0.51 1.38</code></pre>
+<p><strong>Table</strong> Probability A better than other treatments
+(better meaning smaller HR)</p>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_mtc_probBetter.html">get_mtc_probBetter</a></span><span class="op">(</span><span class="va">model</span>, new.lab <span class="op">=</span> <span class="st">"A"</span>, smaller.is.better <span class="op">=</span> <span class="cn">TRUE</span>, sort.by <span class="op">=</span> <span class="st">"effect"</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##   New Comparator probNewBetter</span></span>
-<span><span class="co">## 1   A          B         0.990</span></span>
-<span><span class="co">## 5   A          F         0.755</span></span>
-<span><span class="co">## 3   A          D         0.416</span></span>
-<span><span class="co">## 2   A          C         0.245</span></span>
-<span><span class="co">## 4   A          E         0.089</span></span></code></pre>
+<pre><code>##   New Comparator probNewBetter
+## 1   A          B         0.990
+## 5   A          F         0.757
+## 3   A          D         0.415
+## 2   A          C         0.245
+## 4   A          E         0.091</code></pre>
 <p><strong>Figure</strong> Forest plot A vs other treatments</p>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/plot_mtc_forest.html">plot_mtc_forest</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">HR</span>, lab <span class="op">=</span> <span class="st">"Hazard ratio A vs others"</span>, sort.by <span class="op">=</span> <span class="st">"effect"</span><span class="op">)</span>  </span></code></pre></div>
 <p><img src="example-nma-hr-data_files/figure-html/unnamed-chunk-17-1.png" width="576"></p>
 <p><strong>Table</strong> Cross-tabulation of HRs</p>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">ctab</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/gemtc/man/relative.effect.table.html" class="external-link">relative.effect.table</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span><span class="op">)</span>, <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu">pander</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pander/man/pandoc.table.return.html" class="external-link">pandoc.table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">ctab</span><span class="op">)</span>, split.tables <span class="op">=</span> <span class="cn">Inf</span><span class="op">)</span></span></code></pre></div>
-<table style="width:100%;" class="table">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ctab</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/gemtc/man/relative.effect.table.html">relative.effect.table</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span><span class="op">)</span>, <span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu">pander</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pander/man/pandoc.table.return.html">pandoc.table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="va">ctab</span><span class="op">)</span>, split.tables <span class="op">=</span> <span class="cn">Inf</span><span class="op">)</span></span></code></pre></div>
+<table class="table">
 <colgroup>
 <col width="6%">
 <col width="15%">
@@ -387,25 +402,25 @@ gtag('config', 'G-SGZFXJEC6X'); </script>
 <tr class="odd">
 <td align="center"><strong>A</strong></td>
 <td align="center">A</td>
-<td align="center">1.14 (1.02, 1.26)</td>
-<td align="center">0.93 (0.77, 1.14)</td>
+<td align="center">1.14 (1.02, 1.27)</td>
+<td align="center">0.93 (0.77, 1.13)</td>
 <td align="center">0.97 (0.71, 1.31)</td>
 <td align="center">0.85 (0.67, 1.08)</td>
-<td align="center">1.19 (0.73, 1.94)</td>
+<td align="center">1.19 (0.72, 1.95)</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>B</strong></td>
 <td align="center">0.88 (0.79, 0.98)</td>
 <td align="center">B</td>
 <td align="center">0.82 (0.7, 0.97)</td>
-<td align="center">0.85 (0.64, 1.14)</td>
+<td align="center">0.85 (0.64, 1.13)</td>
 <td align="center">0.75 (0.61, 0.92)</td>
-<td align="center">1.05 (0.65, 1.68)</td>
+<td align="center">1.05 (0.65, 1.69)</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>C</strong></td>
 <td align="center">1.07 (0.88, 1.3)</td>
-<td align="center">1.22 (1.03, 1.44)</td>
+<td align="center">1.22 (1.04, 1.43)</td>
 <td align="center">C</td>
 <td align="center">1.04 (0.82, 1.31)</td>
 <td align="center">0.91 (0.8, 1.04)</td>
@@ -414,179 +429,180 @@ gtag('config', 'G-SGZFXJEC6X'); </script>
 <tr class="even">
 <td align="center"><strong>D</strong></td>
 <td align="center">1.03 (0.76, 1.41)</td>
-<td align="center">1.17 (0.88, 1.57)</td>
+<td align="center">1.18 (0.88, 1.57)</td>
 <td align="center">0.96 (0.76, 1.22)</td>
 <td align="center">D</td>
-<td align="center">0.88 (0.69, 1.13)</td>
-<td align="center">1.23 (0.84, 1.82)</td>
+<td align="center">0.88 (0.69, 1.12)</td>
+<td align="center">1.23 (0.84, 1.81)</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>E</strong></td>
-<td align="center">1.17 (0.93, 1.49)</td>
+<td align="center">1.18 (0.93, 1.49)</td>
 <td align="center">1.34 (1.08, 1.65)</td>
-<td align="center">1.1 (0.97, 1.25)</td>
+<td align="center">1.1 (0.96, 1.25)</td>
 <td align="center">1.14 (0.89, 1.45)</td>
 <td align="center">E</td>
-<td align="center">1.4 (0.88, 2.2)</td>
+<td align="center">1.4 (0.89, 2.21)</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>F</strong></td>
-<td align="center">0.84 (0.52, 1.38)</td>
-<td align="center">0.95 (0.6, 1.53)</td>
+<td align="center">0.84 (0.51, 1.38)</td>
+<td align="center">0.95 (0.59, 1.55)</td>
 <td align="center">0.78 (0.5, 1.23)</td>
-<td align="center">0.81 (0.55, 1.2)</td>
-<td align="center">0.72 (0.46, 1.13)</td>
+<td align="center">0.81 (0.55, 1.19)</td>
+<td align="center">0.71 (0.45, 1.12)</td>
 <td align="center">F</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section level3">
-<h3 id="treatment-rankings">Treatment rankings<a class="anchor" aria-label="anchor" href="#treatment-rankings"></a>
-</h3>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">rk</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/gemtc/man/rank.probability.html" class="external-link">rank.probability</a></span><span class="op">(</span><span class="va">model</span>, preferredDirection <span class="op">=</span> <span class="op">-</span><span class="fl">1</span><span class="op">)</span></span>
-<span><span class="va">mrk</span> <span class="op">&lt;-</span> <span class="fu">reshape2</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/reshape2/man/melt.html" class="external-link">melt</a></span><span class="op">(</span><span class="va">rk</span><span class="op">[</span>,<span class="op">]</span>, varnames <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Treatment"</span>, <span class="st">"Rank"</span><span class="op">)</span>, value.name <span class="op">=</span> <span class="st">"Probability"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">fig</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">mrk</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">Rank</span>, <span class="va">Probability</span>, color <span class="op">=</span> <span class="va">Treatment</span>, linetype <span class="op">=</span> <span class="va">Treatment</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p><strong>Figure</strong> Rankogram</p>
+<div id="treatment-rankings" class="section level2">
+<h2 class="hasAnchor">
+<a href="#treatment-rankings" class="anchor"></a>Treatment rankings</h2>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fig</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">rk</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/gemtc/man/rank.probability.html">rank.probability</a></span><span class="op">(</span><span class="va">model</span>, preferredDirection <span class="op">=</span> <span class="op">-</span><span class="fl">1</span><span class="op">)</span></span>
+<span><span class="va">mrk</span> <span class="op">&lt;-</span> <span class="fu">reshape2</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/reshape2/man/melt.html">melt</a></span><span class="op">(</span><span class="va">rk</span><span class="op">[</span>,<span class="op">]</span>, varnames <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Treatment"</span>, <span class="st">"Rank"</span><span class="op">)</span>, value.name <span class="op">=</span> <span class="st">"Probability"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">fig</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/ggplot2/man/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">mrk</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/ggplot2/man/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/ggplot2/man/aes.html">aes</a></span><span class="op">(</span><span class="va">Rank</span>, <span class="va">Probability</span>, color <span class="op">=</span> <span class="va">Treatment</span>, linetype <span class="op">=</span> <span class="va">Treatment</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/ggplot2/man/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+## ℹ Please use `linewidth` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
+<p><strong>Figure</strong> Rankogram</p>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">fig</span><span class="op">)</span></span></code></pre></div>
 <p><img src="example-nma-hr-data_files/figure-html/unnamed-chunk-20-1.png" width="576"></p>
 <p><strong>Table</strong> Rank probabilities</p>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">rk</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Rank"</span>, <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">ncol</a></span><span class="op">(</span><span class="va">rk</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">rk</span></span></code></pre></div>
-<pre><code><span><span class="co">## Rank probability; preferred direction = -1</span></span>
-<span><span class="co">##       Rank 1      Rank 2      Rank 3     Rank 4      Rank 5       Rank 6</span></span>
-<span><span class="co">## A 0.06794444 0.127111111 0.245388889 0.35472222 0.200611111 0.0042222222</span></span>
-<span><span class="co">## B 0.00000000 0.001388889 0.007277778 0.12422222 0.459944444 0.4071666667</span></span>
-<span><span class="co">## C 0.04327778 0.420277778 0.359222222 0.14883333 0.027055556 0.0013333333</span></span>
-<span><span class="co">## D 0.11900000 0.204777778 0.258611111 0.24594444 0.150944444 0.0207222222</span></span>
-<span><span class="co">## E 0.71283333 0.199500000 0.068833333 0.01555556 0.003055556 0.0002222222</span></span>
-<span><span class="co">## F 0.05694444 0.046944444 0.060666667 0.11072222 0.158388889 0.5663333333</span></span></code></pre>
-</div>
-</div>
-<div class="section level2">
-<h2 id="extract-model-code-e-g--for-appendix">Extract model code (e.g. for Appendix)<a class="anchor" aria-label="anchor" href="#extract-model-code-e-g--for-appendix"></a>
-</h2>
 <div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">model</span><span class="op">$</span><span class="va">code</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## model {</span></span>
-<span><span class="co">##  # Likelihood for arm-based data</span></span>
-<span><span class="co">##  ## OMITTED</span></span>
-<span><span class="co">##  # Likelihood for contrast-based data (univariate for 2-arm trials)</span></span>
-<span><span class="co">##  for(i in studies.r2) {</span></span>
-<span><span class="co">##      for (k in 2:na[i]) {</span></span>
-<span><span class="co">##          mest[i, k] &lt;- delta[i, k]</span></span>
-<span><span class="co">##      }</span></span>
-<span><span class="co">##      m[i, 2] ~ dnorm(mest[i, 2], prec[i, 2])</span></span>
-<span><span class="co">##      prec[i, 2] &lt;- 1 / (e[i, 2] * e[i, 2])</span></span>
-<span><span class="co">##  </span></span>
-<span><span class="co">##      dev[i, 1] &lt;- pow(m[i, 2] - mest[i, 2], 2) * prec[i, 2]</span></span>
-<span><span class="co">##  }</span></span>
-<span><span class="co">##  # Likelihood for contrast-based data (multivariate for multi-arm trials)</span></span>
-<span><span class="co">##  ## OMITTED</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">##  # Fixed effect model</span></span>
-<span><span class="co">##  for (i in studies) {</span></span>
-<span><span class="co">##      delta[i, 1] &lt;- 0</span></span>
-<span><span class="co">##      for (k in 2:na[i]) {</span></span>
-<span><span class="co">##          delta[i, k] &lt;- d[t[i, 1], t[i, k]]</span></span>
-<span><span class="co">##      }</span></span>
-<span><span class="co">##  }</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">##  # Relative effect matrix</span></span>
-<span><span class="co">##  d[1, 1] &lt;- 0</span></span>
-<span><span class="co">##  d[1, 2] &lt;- -d.B.A</span></span>
-<span><span class="co">##  d[1, 3] &lt;- -d.B.A + -d.C.B</span></span>
-<span><span class="co">##  d[1, 4] &lt;- -d.B.A + -d.C.B + d.C.D</span></span>
-<span><span class="co">##  d[1, 5] &lt;- -d.B.A + -d.C.B + d.C.E</span></span>
-<span><span class="co">##  d[1, 6] &lt;- -d.B.A + -d.C.B + d.C.D + d.D.F</span></span>
-<span><span class="co">##  for (i in 2:nt) {</span></span>
-<span><span class="co">##      for (j in 1:nt) {</span></span>
-<span><span class="co">##          d[i, j] &lt;- d[1, j] - d[1, i]</span></span>
-<span><span class="co">##      }</span></span>
-<span><span class="co">##  }</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">##  prior.prec &lt;- pow(re.prior.sd, -2)</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">##  # Study baseline priors</span></span>
-<span><span class="co">##  ## OMITTED</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">##  # Effect parameter priors</span></span>
-<span><span class="co">##  d.B.A ~ dnorm(0, prior.prec)</span></span>
-<span><span class="co">##  d.C.B ~ dnorm(0, prior.prec)</span></span>
-<span><span class="co">##  d.C.D ~ dnorm(0, prior.prec)</span></span>
-<span><span class="co">##  d.C.E ~ dnorm(0, prior.prec)</span></span>
-<span><span class="co">##  d.D.F ~ dnorm(0, prior.prec)</span></span>
-<span><span class="co">##  </span></span>
-<span><span class="co">## }</span></span></code></pre>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">rk</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Rank"</span>, <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">ncol</a></span><span class="op">(</span><span class="va">rk</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">rk</span></span></code></pre></div>
+<pre><code>## Rank probability; preferred direction = -1
+##       Rank 1      Rank 2     Rank 3     Rank 4      Rank 5       Rank 6
+## A 0.06977778 0.127111111 0.24400000 0.35405556 0.200277778 0.0047777778
+## B 0.00000000 0.001666667 0.00650000 0.12511111 0.459388889 0.4073333333
+## C 0.04305556 0.419722222 0.36127778 0.14927778 0.025888889 0.0007777778
+## D 0.11794444 0.205166667 0.26027778 0.24566667 0.151666667 0.0192777778
+## E 0.71277778 0.200333333 0.06811111 0.01594444 0.002555556 0.0002777778
+## F 0.05644444 0.046000000 0.05983333 0.10994444 0.160222222 0.5675555556</code></pre>
 </div>
-<div class="section level2">
-<h2 id="session-info">Session info<a class="anchor" aria-label="anchor" href="#session-info"></a>
-</h2>
-<p>BEE repository: /home/bceuser/benneti1/gemtcPlus/vignettes</p>
+</div>
+<div id="extract-model-code-e-g--for-appendix" class="section level1">
+<h1 class="hasAnchor">
+<a href="#extract-model-code-e-g--for-appendix" class="anchor"></a>Extract model code (e.g. for Appendix)</h1>
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/date.html" class="external-link">date</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## [1] "Tue Jul 26 12:11:17 2022"</span></span></code></pre>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">model</span><span class="op">$</span><span class="va">code</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## model {
+##  # Likelihood for arm-based data
+##  ## OMITTED
+##  # Likelihood for contrast-based data (univariate for 2-arm trials)
+##  for(i in studies.r2) {
+##      for (k in 2:na[i]) {
+##          mest[i, k] &lt;- delta[i, k]
+##      }
+##      m[i, 2] ~ dnorm(mest[i, 2], prec[i, 2])
+##      prec[i, 2] &lt;- 1 / (e[i, 2] * e[i, 2])
+##  
+##      dev[i, 1] &lt;- pow(m[i, 2] - mest[i, 2], 2) * prec[i, 2]
+##  }
+##  # Likelihood for contrast-based data (multivariate for multi-arm trials)
+##  ## OMITTED
+## 
+##  # Fixed effect model
+##  for (i in studies) {
+##      delta[i, 1] &lt;- 0
+##      for (k in 2:na[i]) {
+##          delta[i, k] &lt;- d[t[i, 1], t[i, k]]
+##      }
+##  }
+## 
+##  # Relative effect matrix
+##  d[1, 1] &lt;- 0
+##  d[1, 2] &lt;- -d.B.A
+##  d[1, 3] &lt;- -d.B.A + -d.C.B
+##  d[1, 4] &lt;- -d.B.A + -d.C.B + d.C.D
+##  d[1, 5] &lt;- -d.B.A + -d.C.B + d.C.E
+##  d[1, 6] &lt;- -d.B.A + -d.C.B + d.C.D + d.D.F
+##  for (i in 2:nt) {
+##      for (j in 1:nt) {
+##          d[i, j] &lt;- d[1, j] - d[1, i]
+##      }
+##  }
+## 
+##  prior.prec &lt;- pow(re.prior.sd, -2)
+## 
+##  # Study baseline priors
+##  ## OMITTED
+## 
+##  # Effect parameter priors
+##  d.B.A ~ dnorm(0, prior.prec)
+##  d.C.B ~ dnorm(0, prior.prec)
+##  d.C.D ~ dnorm(0, prior.prec)
+##  d.C.E ~ dnorm(0, prior.prec)
+##  d.D.F ~ dnorm(0, prior.prec)
+##  
+## }</code></pre>
+</div>
+<div id="session-info" class="section level1">
+<h1 class="hasAnchor">
+<a href="#session-info" class="anchor"></a>Session info</h1>
+<p>BEE repository:
+C:/Users/seom1/Documents/GitHub/gemtcPlus/vignettes</p>
 <div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## R version 4.0.3 (2020-10-10)</span></span>
-<span><span class="co">## Platform: x86_64-pc-linux-gnu (64-bit)</span></span>
-<span><span class="co">## Running under: Red Hat Enterprise Linux</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## Matrix products: default</span></span>
-<span><span class="co">## BLAS/LAPACK: /usr/lib64/libopenblas-r0.2.20.so</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## locale:</span></span>
-<span><span class="co">##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              </span></span>
-<span><span class="co">##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    </span></span>
-<span><span class="co">##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   </span></span>
-<span><span class="co">##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 </span></span>
-<span><span class="co">##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            </span></span>
-<span><span class="co">## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       </span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## attached base packages:</span></span>
-<span><span class="co">## [1] stats     graphics  grDevices utils     datasets  methods   base     </span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## other attached packages:</span></span>
-<span><span class="co">## [1] ggmcmc_1.5.1.1  ggplot2_3.3.6   tidyr_1.2.0     gemtcPlus_1.0.0</span></span>
-<span><span class="co">## [5] R2jags_0.7-1    rjags_4-13      gemtc_1.0-1     coda_0.19-4    </span></span>
-<span><span class="co">## [9] dplyr_1.0.9    </span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## loaded via a namespace (and not attached):</span></span>
-<span><span class="co">##  [1] sass_0.4.2           jsonlite_1.8.0       splines_4.0.3       </span></span>
-<span><span class="co">##  [4] network_1.17.2       bslib_0.3.1          assertthat_0.2.1    </span></span>
-<span><span class="co">##  [7] highr_0.9            metafor_3.4-0        pander_0.6.3        </span></span>
-<span><span class="co">## [10] blob_1.2.1           yaml_2.2.1           R2WinBUGS_2.1-21    </span></span>
-<span><span class="co">## [13] pillar_1.8.0         backports_1.1.10     lattice_0.20-41     </span></span>
-<span><span class="co">## [16] glue_1.6.2           digest_0.6.29        RColorBrewer_1.1-2  </span></span>
-<span><span class="co">## [19] meta_5.5-0           minqa_1.2.4          colorspace_2.0-3    </span></span>
-<span><span class="co">## [22] htmltools_0.5.3      Matrix_1.2-18        plyr_1.8.6          </span></span>
-<span><span class="co">## [25] pkgconfig_2.0.3      purrr_0.3.4          scales_1.1.1        </span></span>
-<span><span class="co">## [28] metadat_1.2-0        lme4_1.1-30          tibble_3.1.8        </span></span>
-<span><span class="co">## [31] farver_2.1.1         generics_0.1.3       ellipsis_0.3.2      </span></span>
-<span><span class="co">## [34] withr_2.5.0          cli_3.3.0            crayon_1.5.1        </span></span>
-<span><span class="co">## [37] magrittr_2.0.3       statnet.common_4.6.0 memoise_1.1.0       </span></span>
-<span><span class="co">## [40] evaluate_0.15        GGally_2.1.2         fs_1.5.0            </span></span>
-<span><span class="co">## [43] fansi_1.0.3          nlme_3.1-149         MASS_7.3-53         </span></span>
-<span><span class="co">## [46] truncnorm_1.0-8      xml2_1.3.2           forcats_0.5.1       </span></span>
-<span><span class="co">## [49] textshaping_0.1.2    tools_4.0.3          lifecycle_1.0.1     </span></span>
-<span><span class="co">## [52] stringr_1.4.0        munsell_0.5.0        compiler_4.0.3      </span></span>
-<span><span class="co">## [55] pkgdown_2.0.6        jquerylib_0.1.4      systemfonts_0.3.2   </span></span>
-<span><span class="co">## [58] rlang_1.0.4          grid_4.0.3           nloptr_1.2.2.2      </span></span>
-<span><span class="co">## [61] rstudioapi_0.11      CompQuadForm_1.4.3   igraph_1.3.4        </span></span>
-<span><span class="co">## [64] labeling_0.4.2       rmarkdown_2.14       boot_1.3-25         </span></span>
-<span><span class="co">## [67] gtable_0.3.0         abind_1.4-5          DBI_1.1.0           </span></span>
-<span><span class="co">## [70] reshape_0.8.8        reshape2_1.4.4       R6_2.5.1            </span></span>
-<span><span class="co">## [73] knitr_1.39           fastmap_1.1.0        utf8_1.2.2          </span></span>
-<span><span class="co">## [76] mathjaxr_1.6-0       rprojroot_1.3-2      ragg_0.4.0          </span></span>
-<span><span class="co">## [79] desc_1.4.1           stringi_1.7.8        parallel_4.0.3      </span></span>
-<span><span class="co">## [82] Rcpp_1.0.9           vctrs_0.4.1          tidyselect_1.1.2    </span></span>
-<span><span class="co">## [85] xfun_0.31</span></span></code></pre>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/date.html">date</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "Thu Apr 24 15:46:41 2025"</code></pre>
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## R version 4.2.2 (2022-10-31 ucrt)
+## Platform: x86_64-w64-mingw32/x64 (64-bit)
+## Running under: Windows 10 x64 (build 22631)
+## 
+## Matrix products: default
+## 
+## locale:
+## [1] LC_COLLATE=German_Switzerland.utf8  LC_CTYPE=German_Switzerland.utf8   
+## [3] LC_MONETARY=German_Switzerland.utf8 LC_NUMERIC=C                       
+## [5] LC_TIME=German_Switzerland.utf8    
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] ggmcmc_1.5.1.1  ggplot2_3.4.1   tidyr_1.3.0     gemtcPlus_1.0.0
+## [5] R2jags_0.7-1    rjags_4-14      gemtc_1.0-1     coda_0.19-4    
+## [9] dplyr_1.1.4    
+## 
+## loaded via a namespace (and not attached):
+##  [1] sass_0.4.4           jsonlite_1.8.4       splines_4.2.2       
+##  [4] network_1.18.1       bslib_0.4.2          highr_0.10          
+##  [7] metafor_4.0-0        pander_0.6.5         yaml_2.3.6          
+## [10] R2WinBUGS_2.1-21     numDeriv_2016.8-1.1  pillar_1.9.0        
+## [13] lattice_0.20-45      glue_1.6.2           digest_0.6.31       
+## [16] RColorBrewer_1.1-3   meta_6.2-1           minqa_1.2.5         
+## [19] colorspace_2.1-0     htmltools_0.5.4      Matrix_1.5-1        
+## [22] plyr_1.8.8           pkgconfig_2.0.3      purrr_1.0.1         
+## [25] scales_1.2.1         metadat_1.2-0        lme4_1.1-32         
+## [28] tibble_3.2.1         farver_2.1.1         generics_0.1.3      
+## [31] cachem_1.0.6         withr_2.5.0          cli_3.6.0           
+## [34] crayon_1.5.2         magrittr_2.0.3       statnet.common_4.8.0
+## [37] memoise_2.0.1        evaluate_0.20        GGally_2.1.2        
+## [40] fs_1.6.1             fansi_1.0.4          nlme_3.1-160        
+## [43] MASS_7.3-58.1        forcats_1.0.0        xml2_1.3.3          
+## [46] truncnorm_1.0-9      textshaping_0.3.6    tools_4.2.2         
+## [49] lifecycle_1.0.3      stringr_1.5.0        munsell_0.5.0       
+## [52] compiler_4.2.2       pkgdown_1.6.1        jquerylib_0.1.4     
+## [55] systemfonts_1.0.4    rlang_1.1.3          grid_4.2.2          
+## [58] nloptr_2.0.3         rstudioapi_0.14      CompQuadForm_1.4.3  
+## [61] igraph_1.4.2         labeling_0.4.2       rmarkdown_2.20      
+## [64] boot_1.3-28          gtable_0.3.1         abind_1.4-5         
+## [67] reshape_0.8.9        reshape2_1.4.4       R6_2.5.1            
+## [70] knitr_1.41           fastmap_1.1.0        utf8_1.2.3          
+## [73] mathjaxr_1.6-0       rprojroot_2.0.3      ragg_1.2.5          
+## [76] desc_1.4.2           stringi_1.7.12       parallel_4.2.2      
+## [79] Rcpp_1.0.10          vctrs_0.6.5          tidyselect_1.2.0    
+## [82] xfun_0.36</code></pre>
 </div>
   </div>
 
@@ -601,13 +617,11 @@ gtag('config', 'G-SGZFXJEC6X'); </script>
 
 
       <footer><div class="copyright">
-  <p></p>
-<p>Developed by Sandro Gsteiger, Nick Howlett, Beth Ashlee.</p>
+  <p>Developed by Sandro Gsteiger, Nick Howlett, Beth Ashlee.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
@@ -615,8 +629,6 @@ gtag('config', 'G-SGZFXJEC6X'); </script>
 
   
 
-
-  
 
   </body>
 </html>
