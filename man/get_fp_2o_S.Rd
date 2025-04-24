@@ -40,6 +40,3 @@ from a reference trial (in the NMA) with the fractional polynomial (log)hazard r
 \details{
 The FP parameters to calculate the log-hazard curves for each survivor function are combinations \code{bl.node + contrast.node}. This means the combination \code{ref.std, ref.arm} must identify a study arm in the NMA that used the (NMA) reference treatment. The basic parameters (contrasts vs reference) are then added to optain the parameters for each treatment in the study.
 }
-\examples{
-
-}

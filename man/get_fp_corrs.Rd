@@ -17,6 +17,3 @@ a \code{data.frame} containing the posterior correlations
 \description{
 Calculate correlations between the contrast estimates for multi-dimensional effect estimates for all treatments in a FP NMA.
 }
-\examples{
-
-}
